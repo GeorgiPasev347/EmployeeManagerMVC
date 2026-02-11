@@ -1,0 +1,76 @@
+﻿@model SampleCrudMVC.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Employee Details</h1>
+
+
+    <hr />
+    <div class="row">
+    <table class="table table-bordered table-hover table-responsive-lg">
+        <tr>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <td class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </td>
+        </tr>
+        <tr>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <td class = "col-sm-10">
+            @Html.DisplayFor(model => model.MiddleName)
+        </td>
+        </tr>
+        <tr>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <td class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </td>
+        </tr>
+        <tr>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <td class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </td>
+        </tr>
+        <tr>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailAdress)
+        </th>
+        <td class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailAdress)
+        </td>
+        </tr>
+        <tr>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <td class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </td>
+        </tr>
+        <tr>
+        <th class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <td class = "col-sm-10">
+            @Html.DisplayFor(model => model.Country)
+        </td>
+        </tr>
+    </div>
+</div>
+<div class="row p-3">
+    <div class="form-group">
+    <a class="btn btn-dark float-end" asp-action="Edit" asp-route-id="@Model?.Id">Update Employee</a> 
+    <a class="btn btn-warning float-start" asp-action="Index">Back to List</a>
+    </div>
+</div>

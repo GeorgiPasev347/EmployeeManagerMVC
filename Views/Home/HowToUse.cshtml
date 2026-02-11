@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "How To Use";
+}
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">User Guide</h1>
+        <p class="lead text-muted">Learn how to efficiently manage your employee database in a few simple steps.</p>
+        <div class="dropdown-divider w-25 mx-auto"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <span class="badge rounded-circle bg-dark p-3" style="width: 50px; height: 50px; line-height: 20px;">1</span>
+                    </div>
+                    <h5 class="card-title fw-bold">View Employees</h5>
+                    <p class="card-text text-secondary">Go to the <strong>Employees</strong> section to see a full list of everyone currently in the system.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm  bg-light">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <span class="badge rounded-circle bg-dark text-light p-3" style="width: 50px; height: 50px; line-height: 20px;">2</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Add New Records</h5>
+                    <p class="card-text border-light opacity-75">Click the <strong>"Create New"</strong> button. Fill in FirstName, MiddleName, LastName, Phone Number, Email, Gender and Country of the new employee.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <span class="badge rounded-circle bg-dark p-3" style="width: 50px; height: 50px; line-height: 20px;">3</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Edit & Delete</h5>
+                    <p class="card-text text-secondary">Use the action buttons next to each employee to update their info or remove them from the list.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="text-center mt-5">
+        <a asp-controller="Employees" asp-action="Index" class="btn btn-dark btn-lg px-5 shadow"> Try</a>
+    </div>
+</div>
