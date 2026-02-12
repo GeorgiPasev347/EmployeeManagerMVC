@@ -12,7 +12,7 @@ The EmployeeManagerMVC is a user-friendly web application designed to streamline
 # Tech Stack & Versions
 * Framework: ASP.NET Core 8.0 (MVC)
 * Language: C# 8
-* Database: SQL Server-SQLClient
+* Database: SQL Server-SQLClient Version-8.0
 * ORM: Entity Framework Core 8.0
 * Frontend: Bootstrap 5.0;
 
