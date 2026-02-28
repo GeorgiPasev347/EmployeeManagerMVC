@@ -30,14 +30,14 @@ namespace SampleCrudMVC.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var employee = await _context.Employees
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (employee == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(employee);
