@@ -17,6 +17,7 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseStatusCodePagesWithReExecute("Home/HandleError/{0}");
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();

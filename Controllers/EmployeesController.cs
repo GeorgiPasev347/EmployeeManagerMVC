@@ -54,7 +54,7 @@ namespace SampleCrudMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,MiddleName,LastName,PhoneNumber,EmailAdress,Gender,Country")] Employee employee)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,MiddleName,LastName,PhoneNumber,EmailAdress,Gender,Country,Position")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -152,6 +152,51 @@ namespace SampleCrudMVC.Controllers
         private bool EmployeeExists(int id)
         {
             return _context.Employees.Any(e => e.Id == id);
+        }
+        // GET: Показва празната страница за търсене
+        public IActionResult Search()
+        {
+            var model = new EmployeeSearchVM()
+            {
+                Results = new List<Employee>()
+            };
+            return View(model);
+        }
+
+        // POST: Изпълнява търсенето
+        [HttpPost]
+        public async Task<IActionResult> Search(EmployeeSearchVM model)
+        {
+            var query = _context.Employees.AsQueryable();
+
+            if (!string.IsNullOrEmpty(model.Name))
+            {
+                query = query.Where(e => e.FirstName.Contains(model.Name) || e.LastName.Contains(model.Name));
+            }
+
+           
+
+            model.Results = await query.ToListAsync();
+            return View(model);
+        }
+
+
+        public async Task<IActionResult> Statistics()
+        {
+            var employees = await _context.Employees.ToListAsync();
+
+            var stats = new EmployeeStatisticsVM
+            {
+                TotalEmployees = employees.Count,
+                MaleEmployees = employees.Count(e => e.Gender == "Male"),
+                FemaleEmployees = employees.Count(e => e.Gender == "Female"),
+                TopCountry = employees.GroupBy(e => e.Country)
+                                      .OrderByDescending(g => g.Count())
+                                      .Select(g => g.Key)
+                                      .FirstOrDefault() ?? "N/A"
+            };
+
+            return View(stats);
         }
     }
 }

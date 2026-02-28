@@ -1,0 +1,46 @@
+﻿@model EmployeeSearchVM
+
+<div class="container mt-4">
+    <h2>Search Employee</h2>
+    <p class="text-muted">Enter Name of employee to see their country information.</p>
+
+    <div class="card p-4 mb-4 shadow-sm bg-light border-0">
+        <form asp-action="Search" method="post">
+            <div class="input-group">
+                <input asp-for="Name" class="form-control form-control-lg" placeholder="First Name or Last Name..." />
+                <button type="submit" class="btn btn-primary px-4">Search</button>
+            </div>
+        </form>
+    </div>
+
+    @if (Model.Results.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-hover border shadow-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var emp in Model.Results)
+                    {
+                        <tr>
+                            <td>@emp.FirstName</td>
+                            <td>@emp.LastName</td>
+                            <td>
+                                <span class="badge bg-info text-dark">@emp.Country</span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else if (Context.Request.Method == "POST")
+    {
+        <div class="alert alert-warning">No such employee.</div>
+    }
+</div>

@@ -1,0 +1,52 @@
+﻿@model EmployeeStatisticsVM
+
+@{
+    ViewData["Title"] = "Employee Statistics";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary"><i class="bi bi-bar-chart-fill"></i> Employee Statistics</h2>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-sm">Back to List</a>
+    </div>
+
+    <hr />
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-primary text-white mb-4">
+                <div class="card-body py-4">
+                    <h5 class="card-title text-uppercase opacity-75">Total Employees</h5>
+                    <h1 class="display-3 fw-bold">@Model.TotalEmployees</h1>
+                    <p class="mb-0">Active records in database</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-success text-white mb-4">
+                <div class="card-body py-4">
+                    <h5 class="card-title text-uppercase opacity-75">Top Location</h5>
+                    <h1 class="display-5 fw-bold">@Model.TopCountry</h1>
+                    <p class="mb-0">Most employees reside here</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-dark text-white mb-4">
+                <div class="card-body py-4">
+                    <h5 class="card-title text-uppercase opacity-75">Gender Split</h5>
+                    <div class="d-flex align-items-baseline">
+                        <h2 class="mb-0 fw-bold">M: @Model.MaleEmployees</h2>
+                        <span class="mx-2 fs-4">/</span>
+                        <h2 class="mb-0 fw-bold">F: @Model.FemaleEmployees</h2>
+                    </div>
+                    <p class="mb-0 mt-2">Diversity breakdown</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
