@@ -19,13 +19,14 @@ namespace SampleCrudMVC.Controllers
             _context = context;
         }
 
-        // GET: Employees
+       
         public async Task<IActionResult> Index()
         {
+           
             return View(await _context.Employees.ToListAsync());
         }
 
-        // GET: Employees/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,15 +44,13 @@ namespace SampleCrudMVC.Controllers
             return View(employee);
         }
 
-        // GET: Employees/Create
+        
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Employees/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstName,MiddleName,LastName,PhoneNumber,EmailAdress,Gender,Country,Position")] Employee employee)
@@ -65,7 +64,7 @@ namespace SampleCrudMVC.Controllers
             return View(employee);
         }
 
-        // GET: Employees/Edit/5
+       
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,9 +80,6 @@ namespace SampleCrudMVC.Controllers
             return View(employee);
         }
 
-        // POST: Employees/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,MiddleName,LastName,PhoneNumber,EmailAdress,Gender,Country")] Employee employee)
@@ -116,7 +112,6 @@ namespace SampleCrudMVC.Controllers
             return View(employee);
         }
 
-        // GET: Employees/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +129,7 @@ namespace SampleCrudMVC.Controllers
             return View(employee);
         }
 
-        // POST: Employees/Delete/5
+       
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
