@@ -11,6 +11,8 @@
         public string? PhoneNumber { get; set; }
         public string? EmailAdress { get; set; }
         public string? Gender { get; set; }
+        [Required]
+        [MinLength(2, ErrorMessage = "Country must be at least 2 characters long.")]
         public string? Country { get; set; }
         public string? Position { get; internal set; }
     }
