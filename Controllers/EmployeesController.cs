@@ -153,7 +153,7 @@ namespace SampleCrudMVC.Controllers
         {
             return _context.Employees.Any(e => e.Id == id);
         }
-        // GET: Показва празната страница за търсене
+       
         public IActionResult Search()
         {
             var model = new EmployeeSearchVM()
@@ -163,7 +163,7 @@ namespace SampleCrudMVC.Controllers
             return View(model);
         }
 
-        // POST: Изпълнява търсенето
+       
         [HttpPost]
         public async Task<IActionResult> Search(EmployeeSearchVM model)
         {
@@ -198,5 +198,7 @@ namespace SampleCrudMVC.Controllers
 
             return View(stats);
         }
+
+
     }
 }
