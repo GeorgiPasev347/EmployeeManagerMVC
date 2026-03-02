@@ -53,7 +53,7 @@ namespace SampleCrudMVC.Controllers
       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,MiddleName,LastName,PhoneNumber,EmailAdress,Gender,Country,Position")] Employee employee)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,MiddleName,LastName,PhoneNumber,EmailAdress,Gender,Country")] Employee employee)
         {
             if (ModelState.IsValid)
             {
