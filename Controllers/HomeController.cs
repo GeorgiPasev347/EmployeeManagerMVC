@@ -15,6 +15,9 @@ namespace SampleCrudMVC.Controllers
 
         public IActionResult Index()
         {
+            
+
+
             return View();
         }
 
@@ -32,20 +35,20 @@ namespace SampleCrudMVC.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(int? statusCode = null)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View("Error500");
         }
         [Route("Home/HandleError/{statusCode}")]
         public IActionResult HandleError(int statusCode)
         {
             if (statusCode == 404)
             {
-                return View("NotFound"); // Това е твоето 6-то вю
+                return View("NotFound"); 
             }
 
-            // Можеш да добавиш и за 500 (Bad Request), което е 7-мо вю
-            return View("Error");
+            
+            return View("Error500");
         }
 
        
