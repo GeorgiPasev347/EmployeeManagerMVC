@@ -4,17 +4,19 @@ EmployeeManager is CRUD application designed to make managing employees easier.B
 
 
 ● Tech Stack
--Framework: .NET 8
 
--Database: Microsoft SQL Server(SqlClient)
+-Framework: .NET 8;
 
--ORM: Entity Framework Core
+-Database: Microsoft SQL Server(SqlClient);
+
+-ORM: Entity Framework Core;
 
 -Frontend: Bootstrap 5, Razor Pages;
 
--Architecture: Model-View-Controller (MVC)
+-Architecture: Model-View-Controller (MVC);
 
 ● Features
+
 -Full CRUD Functionality: Create, Read, Update, and Delete employee records.
 
 -Form Validation: Client-side and server-side validation for data integrity.
